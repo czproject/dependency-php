@@ -8,10 +8,13 @@
 	
 	class Dependency
 	{
+		/** @var  array  [(string) item => (array) depends] */
 		private $items = array();
 		
+		/** @var  array */
 		private $result = array();
 		
+		/** @var  array  [(string) item => TRUE] */
 		private $cache = array();
 		
 		
@@ -47,6 +50,9 @@
 		
 		
 		
+		/**
+		 * @return	array
+		 */
 		public function getResolved()
 		{
 			$this->result = array();
@@ -58,6 +64,11 @@
 		
 		
 		
+		/**
+		 * @param	string
+		 * @param	array|NULL
+		 * @return	void
+		 */
 		protected function solve($key, array $value = NULL)
 		{
 			if(isset($this->cache[$key]))
