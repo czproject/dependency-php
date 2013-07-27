@@ -20,7 +20,7 @@
 		/**
 		 * @param	string
 		 * @param	string[]
-		 * @return	$this
+		 * @return	self
 		 */
 		public function add($item, array $depends = array())
 		{
@@ -32,7 +32,7 @@
 		
 		
 		/**
-		 * @return	$this
+		 * @return	self
 		 */
 		public function reset()
 		{
