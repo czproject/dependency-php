@@ -18,13 +18,17 @@
 		
 		/**
 		 * @param	string
-		 * @param	string[]
+		 * @param	string|string[]|NULL
 		 * @return	self
 		 */
-		public function add($item, array $depends = array())
+		public function add($item, $depends = NULL)
 		{
-			$this->items[(string)$item] = $depends;
+			if($depends !== NULL && !is_array($depends))
+			{
+				$depends = (array) $depends;
+			}
 			
+			$this->items[(string)$item] = $depends;
 			return $this;
 		}
 		
@@ -54,7 +58,7 @@
 		
 		
 		
-		protected function solve($key, $value)
+		protected function solve($key, array $value = NULL)
 		{
 			if(isset($this->cache[$key]))
 			{
@@ -63,17 +67,20 @@
 			
 			$this->cache[$key] = TRUE;
 			
-			foreach($value as $v)
+			if($value !== NULL)
 			{
-				$v = (string) $v;
-				if(isset($this->items[$v]))
+				foreach($value as $v)
 				{
-					$this->solve($v, $this->items[$v]);
-				}
-				elseif(!isset($this->cache[$v]))
-				{
-					$this->cache[$v] = TRUE;
-					$this->result[] = $v; // nedefinovany sirotek
+					$v = (string) $v;
+					if(isset($this->items[$v]))
+					{
+						$this->solve($v, $this->items[$v]);
+					}
+					elseif(!isset($this->cache[$v]))
+					{
+						$this->cache[$v] = TRUE;
+						$this->result[] = $v; // nedefinovany sirotek
+					}
 				}
 			}
 			
