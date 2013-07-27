@@ -22,9 +22,9 @@
 		 * @param	string[]
 		 * @return	$this
 		 */
-		public function add($item, array $deps = array())
+		public function add($item, array $depends = array())
 		{
-			$this->items[(string)$item] = $deps;
+			$this->items[(string)$item] = $depends;
 			
 			return $this;
 		}
