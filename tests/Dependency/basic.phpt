@@ -46,6 +46,8 @@ $resolver->add('b', 'd');
 $resolver->add('c', array('d'));
 
 Assert::same(array('d', 'b', 'c', 'a', 'x'), $resolver->getResolved());
+# cache test
+Assert::same(array('d', 'b', 'c', 'a', 'x'), $resolver->getResolved());
 $resolver->reset();
 
 
@@ -59,5 +61,3 @@ $result = $resolver->add('x', array('a', 'b'))
 	->getResolved();
 
 Assert::same(array('d', 'b', 'c', 'a', 'x'), $result);
-
-

@@ -16,6 +16,9 @@
 		
 		/** @var  array  [(string) item => TRUE] */
 		private $cache = array();
+
+		/** @var  bool */
+		private $useCached = TRUE;
 		
 		
 		
@@ -32,6 +35,7 @@
 			}
 			
 			$this->items[(string)$item] = $depends;
+			$this->useCached = FALSE;
 			return $this;
 		}
 		
@@ -55,10 +59,16 @@
 		 */
 		public function getResolved()
 		{
+			if($this->useCached)
+			{
+				return $this->result;
+			}
+
 			$this->result = array();
 			$this->cache = array();
 			
 			array_walk($this->items, array($this, 'applyWalk'));
+			$this->useCached = TRUE;
 			return $this->result;
 		}
 		
