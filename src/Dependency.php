@@ -1,27 +1,27 @@
 <?php
 	/** Dependency Class
-	 * 
+	 *
 	 * @author		Jan Pecha, <janpecha@email.cz>
 	 */
-	
+
 	namespace Cz;
-	
+
 	class Dependency
 	{
 		/** @var  array  [(string) item => (array) depends] */
 		private $items = array();
-		
+
 		/** @var  array */
 		private $result = array();
-		
+
 		/** @var  array  [(string) item => TRUE] */
 		private $cache = array();
 
 		/** @var  bool */
 		private $useCached = TRUE;
-		
-		
-		
+
+
+
 		/**
 		 * @param	string
 		 * @param	string|string[]|NULL
@@ -33,14 +33,14 @@
 			{
 				$depends = (array) $depends;
 			}
-			
+
 			$this->items[(string)$item] = $depends;
 			$this->useCached = FALSE;
 			return $this;
 		}
-		
-		
-		
+
+
+
 		/**
 		 * @return	self
 		 */
@@ -51,9 +51,9 @@
 			$this->cache = array();
 			return $this;
 		}
-		
-		
-		
+
+
+
 		/**
 		 * @return	array
 		 */
@@ -66,14 +66,14 @@
 
 			$this->result = array();
 			$this->cache = array();
-			
+
 			array_walk($this->items, array($this, 'applyWalk'));
 			$this->useCached = TRUE;
 			return $this->result;
 		}
-		
-		
-		
+
+
+
 		/**
 		 * @param	string
 		 * @param	array|NULL
@@ -85,9 +85,9 @@
 			{
 				return;
 			}
-			
+
 			$this->cache[$key] = TRUE;
-			
+
 			if($value !== NULL)
 			{
 				foreach($value as $v)
@@ -104,12 +104,12 @@
 					}
 				}
 			}
-			
+
 			$this->result[] = $key;
 		}
-		
-		
-		
+
+
+
 		/**
 		 * @internal
 		 */

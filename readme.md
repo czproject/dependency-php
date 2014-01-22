@@ -13,7 +13,7 @@ Usage
 		->add('a', array('b', 'c'))
 		->add('b', 'd')
 		->add('c', array('d'));
-	
+
 	$resolver->getResolved(); // returns ['d', 'b', 'c', 'a', 'x']
 ```
 
