@@ -27,7 +27,7 @@ Installation
 composer require czproject/dependency-php
 ```
 
-Dependency-PHP requires PHP 5.3.0 or later and ....
+Dependency-PHP requires PHP 5.3.0 or later.
 
 
 ------------------------------
