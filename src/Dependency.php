@@ -1,8 +1,4 @@
 <?php
-	/** Dependency Class
-	 *
-	 * @author		Jan Pecha, <janpecha@email.cz>
-	 */
 
 	namespace Cz;
 
@@ -23,9 +19,9 @@
 
 
 		/**
-		 * @param	string
-		 * @param	string|string[]|NULL
-		 * @return	self
+		 * @param  string
+		 * @param  string|string[]|NULL
+		 * @return self
 		 */
 		public function add($item, $depends = NULL)
 		{
@@ -42,7 +38,7 @@
 
 
 		/**
-		 * @return	self
+		 * @return self
 		 */
 		public function reset()
 		{
@@ -55,7 +51,7 @@
 
 
 		/**
-		 * @return	array
+		 * @return array
 		 */
 		public function getResolved()
 		{
@@ -75,9 +71,9 @@
 
 
 		/**
-		 * @param	string
-		 * @param	array|NULL
-		 * @return	void
+		 * @param  string
+		 * @param  array|NULL
+		 * @return void
 		 */
 		protected function solve($key, array $value = NULL)
 		{
@@ -118,4 +114,3 @@
 			$this->solve($key, $value);
 		}
 	}
-

@@ -36,5 +36,3 @@ $resolver->add('c', array('d'));
 Assert::same(array('d', 'b', 'c', 'a', 'x'), $resolver->getResolved());
 
 $resolver->reset();
-
-
