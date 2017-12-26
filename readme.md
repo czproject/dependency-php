@@ -5,6 +5,19 @@ Dependency-PHP
 
 PHP class for dependency resolving.
 
+
+Installation
+------------
+
+[Download a latest package](https://github.com/czproject/dependency-php/releases) or use [Composer](http://getcomposer.org/):
+
+```
+composer require czproject/dependency-php
+```
+
+Dependency-PHP requires PHP 5.3.0 or later.
+
+
 Usage
 -----
 
@@ -18,19 +31,6 @@ Usage
 
 	$resolver->getResolved(); // returns ['d', 'b', 'c', 'a', 'x']
 ```
-
-
-Installation
-------------
-
-[Download a latest package](https://github.com/czproject/dependency-php/releases) or use [Composer](http://getcomposer.org/):
-
-```
-composer require czproject/dependency-php
-```
-
-Dependency-PHP requires PHP 5.3.0 or later.
-
 
 ------------------------------
 
