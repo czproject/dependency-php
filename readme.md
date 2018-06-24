@@ -5,6 +5,9 @@ Dependency-PHP
 
 PHP class for dependency resolving.
 
+<a href="https://www.patreon.com/bePatron?u=9680759"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron!" height="35"></a>
+<a href="https://www.paypal.me/janpecha/1eur"><img src="https://buymecoffee.intm.org/img/button-paypal-white.png" alt="Buy me a coffee" height="35"></a>
+
 
 Installation
 ------------
@@ -22,14 +25,13 @@ Usage
 -----
 
 ``` php
-<?php
-	$resolver = new Cz\Dependency;
-	$resolver->add('x', array('a', 'b'))
-		->add('a', array('b', 'c'))
-		->add('b', 'd')
-		->add('c', array('d'));
+$resolver = new Cz\Dependency;
+$resolver->add('x', array('a', 'b'))
+	->add('a', array('b', 'c'))
+	->add('b', 'd')
+	->add('c', array('d'));
 
-	$resolver->getResolved(); // returns ['d', 'b', 'c', 'a', 'x']
+$resolver->getResolved(); // returns ['d', 'b', 'c', 'a', 'x']
 ```
 
 ------------------------------
