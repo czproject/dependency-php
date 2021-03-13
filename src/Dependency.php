@@ -5,13 +5,13 @@
 
 	class Resolver
 	{
-		/** @var  array  [(string) item => (array) depends] */
+		/** @var  array<string, string[]|NULL>  [(string) item => (array) depends] */
 		private $items = [];
 
-		/** @var  array */
+		/** @var  array<string> */
 		private $result = [];
 
-		/** @var  array  [(string) item => TRUE] */
+		/** @var  array<string, TRUE>  [(string) item => TRUE] */
 		private $cache = [];
 
 		/** @var  bool */
@@ -20,8 +20,8 @@
 
 
 		/**
-		 * @param  string
-		 * @param  string|string[]|NULL
+		 * @param  string $item
+		 * @param  string|string[]|NULL $depends
 		 * @return self
 		 */
 		public function add($item, $depends = NULL)
@@ -52,7 +52,7 @@
 
 
 		/**
-		 * @return array
+		 * @return array<string>
 		 */
 		public function getResolved()
 		{
@@ -72,8 +72,8 @@
 
 
 		/**
-		 * @param  string
-		 * @param  array|NULL
+		 * @param  string $key
+		 * @param  string[]|NULL $value
 		 * @return void
 		 */
 		protected function solve($key, array $value = NULL)
@@ -108,6 +108,9 @@
 
 
 		/**
+		 * @param string[]|NULL $value
+		 * @param string $key
+		 * @return void
 		 * @internal
 		 */
 		public function applyWalk($value, $key)
