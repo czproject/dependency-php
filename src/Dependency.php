@@ -1,8 +1,9 @@
 <?php
 
-	namespace Cz;
+	namespace CzProject\DependencyPhp;
 
-	class Dependency
+
+	class Resolver
 	{
 		/** @var  array  [(string) item => (array) depends] */
 		private $items = [];

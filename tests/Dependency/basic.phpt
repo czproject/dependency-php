@@ -16,7 +16,7 @@ require __DIR__ . '/../bootstrap.php';
 
 
 
-$resolver = new Cz\Dependency;
+$resolver = new CzProject\DependencyPhp\Resolver;
 $resolver->add('f1', ['f4', 'f2', 'f3']);
 $resolver->add('f2');
 $resolver->add('f3');
@@ -27,7 +27,7 @@ $resolver->reset();
 
 
 
-$resolver = new Cz\Dependency;
+$resolver = new CzProject\DependencyPhp\Resolver;
 $resolver->add('f1', ['f2', 'f3']);
 $resolver->add('f2');
 $resolver->add('f3');
@@ -39,7 +39,7 @@ $resolver->reset();
 
 
 # sirotek
-$resolver = new Cz\Dependency;
+$resolver = new CzProject\DependencyPhp\Resolver;
 $resolver->add('x', ['a', 'b']);
 $resolver->add('a', ['b', 'c']);
 $resolver->add('b', 'd');
@@ -53,7 +53,7 @@ $resolver->reset();
 
 
 # fluent interface
-$resolver = new Cz\Dependency;
+$resolver = new CzProject\DependencyPhp\Resolver;
 $result = $resolver->add('x', ['a', 'b'])
 	->add('a', ['b', 'c'])
 	->add('b', 'd')

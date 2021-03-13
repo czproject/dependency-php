@@ -5,7 +5,7 @@ use Tester\Assert;
 require __DIR__ . '/../bootstrap.php';
 
 
-$resolver = new Cz\Dependency;
+$resolver = new CzProject\DependencyPhp\Resolver;
 $resolver->add('f1', ['f4', 'f2', 'f3']);
 Assert::same(['f4', 'f2', 'f3', 'f1'], $resolver->getResolved());
 
@@ -22,7 +22,7 @@ $resolver->reset();
 
 
 
-$resolver = new Cz\Dependency;
+$resolver = new CzProject\DependencyPhp\Resolver;
 $resolver->add('x', ['a', 'b']);
 Assert::same(['a', 'b', 'x'], $resolver->getResolved());
 

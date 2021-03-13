@@ -25,7 +25,7 @@ Usage
 -----
 
 ``` php
-$resolver = new Cz\Dependency;
+$resolver = new CzProject\DependencyPhp\Resolver;
 $resolver->add('x', array('a', 'b'))
 	->add('a', array('b', 'c'))
 	->add('b', 'd')
