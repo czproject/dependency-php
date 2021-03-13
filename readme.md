@@ -1,7 +1,7 @@
 Dependency-PHP
 ==============
 
-[![Build Status](https://travis-ci.org/czproject/dependency-php.svg?branch=master)](https://travis-ci.org/czproject/dependency-php)
+[![Tests Status](https://github.com/czproject/dependency-php/workflows/Tests/badge.svg)](https://github.com/czproject/dependency-php/actions)
 
 PHP class for dependency resolving.
 
