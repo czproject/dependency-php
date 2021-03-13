@@ -1,8 +1,8 @@
 <?php
+
 use Tester\Assert;
 
-require __DIR__ . '/bootstrap.php';
-require __DIR__ . '/../../src/Dependency.php';
+require __DIR__ . '/../bootstrap.php';
 
 
 #$resolver = new Cz\Dependency;
