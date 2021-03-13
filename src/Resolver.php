@@ -18,7 +18,6 @@
 		private $useCached = TRUE;
 
 
-
 		/**
 		 * @param  string $item
 		 * @param  string|string[]|NULL $depends
@@ -26,16 +25,14 @@
 		 */
 		public function add($item, $depends = NULL)
 		{
-			if($depends !== NULL && !is_array($depends))
-			{
+			if ($depends !== NULL && !is_array($depends)) {
 				$depends = (array) $depends;
 			}
 
-			$this->items[(string)$item] = $depends;
+			$this->items[(string) $item] = $depends;
 			$this->useCached = FALSE;
 			return $this;
 		}
-
 
 
 		/**
@@ -50,14 +47,12 @@
 		}
 
 
-
 		/**
 		 * @return array<string>
 		 */
 		public function getResolved()
 		{
-			if($this->useCached)
-			{
+			if ($this->useCached) {
 				return $this->result;
 			}
 
@@ -80,24 +75,20 @@
 		 */
 		private function solve($key, array $value = NULL)
 		{
-			if(isset($this->cache[$key]))
-			{
+			if (isset($this->cache[$key])) {
 				return;
 			}
 
 			$this->cache[$key] = TRUE;
 
-			if($value !== NULL)
-			{
-				foreach($value as $v)
-				{
+			if ($value !== NULL) {
+				foreach ($value as $v) {
 					$v = (string) $v;
-					if(isset($this->items[$v]))
-					{
+
+					if (isset($this->items[$v])) {
 						$this->solve($v, $this->items[$v]);
-					}
-					elseif(!isset($this->cache[$v]))
-					{
+
+					} elseif(!isset($this->cache[$v])) {
 						$this->cache[$v] = TRUE;
 						$this->result[] = $v; // nedefinovany sirotek
 					}
