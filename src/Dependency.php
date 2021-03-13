@@ -64,7 +64,9 @@
 			$this->result = [];
 			$this->cache = [];
 
-			array_walk($this->items, [$this, 'applyWalk']);
+			array_walk($this->items, function ($value, $key) {
+				$this->solve($key, $value);
+			});
 			$this->useCached = TRUE;
 			return $this->result;
 		}
@@ -76,7 +78,7 @@
 		 * @param  string[]|NULL $value
 		 * @return void
 		 */
-		protected function solve($key, array $value = NULL)
+		private function solve($key, array $value = NULL)
 		{
 			if(isset($this->cache[$key]))
 			{
@@ -103,18 +105,5 @@
 			}
 
 			$this->result[] = $key;
-		}
-
-
-
-		/**
-		 * @param string[]|NULL $value
-		 * @param string $key
-		 * @return void
-		 * @internal
-		 */
-		public function applyWalk($value, $key)
-		{
-			$this->solve($key, $value);
 		}
 	}
