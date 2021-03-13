@@ -5,13 +5,13 @@
 	class Dependency
 	{
 		/** @var  array  [(string) item => (array) depends] */
-		private $items = array();
+		private $items = [];
 
 		/** @var  array */
-		private $result = array();
+		private $result = [];
 
 		/** @var  array  [(string) item => TRUE] */
-		private $cache = array();
+		private $cache = [];
 
 		/** @var  bool */
 		private $useCached = TRUE;
@@ -42,9 +42,9 @@
 		 */
 		public function reset()
 		{
-			$this->items = array();
-			$this->result = array();
-			$this->cache = array();
+			$this->items = [];
+			$this->result = [];
+			$this->cache = [];
 			return $this;
 		}
 
@@ -60,10 +60,10 @@
 				return $this->result;
 			}
 
-			$this->result = array();
-			$this->cache = array();
+			$this->result = [];
+			$this->cache = [];
 
-			array_walk($this->items, array($this, 'applyWalk'));
+			array_walk($this->items, [$this, 'applyWalk']);
 			$this->useCached = TRUE;
 			return $this->result;
 		}
