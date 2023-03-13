@@ -2,10 +2,13 @@ Dependency-PHP
 ==============
 
 [![Build Status](https://github.com/czproject/dependency-php/workflows/Build/badge.svg)](https://github.com/czproject/dependency-php/actions)
+[![Downloads this Month](https://img.shields.io/packagist/dm/czproject/dependency-php.svg)](https://packagist.org/packages/czproject/dependency-php)
+[![Latest Stable Version](https://poser.pugx.org/czproject/dependency-php/v/stable)](https://github.com/czproject/dependency-php/releases)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/czproject/dependency-php/blob/master/license.md)
 
 PHP class for dependency resolving.
 
-<a href="https://www.paypal.me/janpecha/5eur"><img src="https://buymecoffee.intm.org/img/button-paypal-white.png" alt="Buy me a coffee" height="35"></a>
+<a href="https://www.janpecha.cz/donate/"><img src="https://buymecoffee.intm.org/img/donate-banner.v1.svg" alt="Donate" height="100"></a>
 
 
 Installation
