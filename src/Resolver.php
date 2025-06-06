@@ -75,7 +75,7 @@
 		 * @param  string[]|NULL $value
 		 * @return void
 		 */
-		private function solve($key, array $value = NULL)
+		private function solve($key, ?array $value = NULL)
 		{
 			if (isset($this->cache[$key])) {
 				return;
